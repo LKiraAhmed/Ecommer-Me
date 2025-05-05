@@ -118,19 +118,24 @@ Route::middleware(['JwtMiddleware'])->group(function () {
         Route::post('/Create', ['Products\AddProductController@store']);
         Route::post('/Delete', ['Products\DeleteProductController@destroy']);
         Route::post('/Edit', ['Products\EditProductController@update']);
+        Route::post('/Show', ['Products\ShowProductController@show']);
     });
 
     Route::prefix('refund')->group(function () {
         Route::post('/Create', ['Refund\AddRefundController@store']);
         Route::post('/Delete', ['Refund\DeleteRefundController@destroy']);
         Route::post('/Edit', ['Refund\EditRefundController@update']);
-        Route::get('/Show', ['Refund\ShowRefundController@index']);
+        Route::get('/Show', ['Refund\ShowRefundController@show']);
+        Route::get('/ShowOne', ['Refund\ShowRefundController@showOne']);
     });
 
     Route::prefix('review')->group(function () {
         Route::post('/Create', ['Review\AddReviewController@store']);
         Route::post('/Delete', ['Review\DeleteReviewController@destroy']);
         Route::post('/Edit', ['Review\EditReviewController@update']);
+        Route::post('/showAll', ['Review\ShowReviewController@showAll']);
+        Route::post('/show', ['Review\ShowReviewController@show']);
+        Route::post('/productReviews', ['Review\ShowReviewController@productReviews']);
     });
 
 
@@ -138,35 +143,42 @@ Route::middleware(['JwtMiddleware'])->group(function () {
         Route::post('/Create', ['Shipment\AddShipmentController@store']);
         Route::post('/Delete', ['Shipment\DeleteShipmentController@destroy']);
         Route::post('/Edit', ['Shipment\EditShipmentController@update']);
-        Route::get('/Show', ['Shipment\ShowShipmentController@index']);
+        Route::get('/Show/index', ['Shipment\ShowShipmentController@index']);
+        Route::get('/ShowAll', ['Shipment\ShowShipmentController@showAll']);
+        Route::get('/Show', ['Shipment\ShowShipmentController@show']);
+
     });
 
     Route::prefix('stock-management')->group(function () {
         Route::post('/Create', ['StockManagement\AddStockController@store']);
         Route::post('/Delete', ['StockManagement\DeleteStockController@destroy']);
         Route::post('/Edit', ['StockManagement\EditStockController@update']);
-        Route::get('/Show', ['StockManagement\ShowStockController@index']);
+        Route::get('/Show/index', ['StockManagement\ShowStockController@index']);
+        Route::get('/Show', ['StockManagement\ShowStockController@show']);
     });
 
     Route::prefix('support-ticket')->group(function () {
         Route::post('/Create', ['SupportTicket\AddSupportTicketController@store']);
         Route::post('/Delete', ['SupportTicket\DeleteSupportTicketController@destroy']);
         Route::post('/Edit', ['SupportTicket\EditSupportTicketController@update']);
-        Route::get('/Show', ['SupportTicket\ShowSupportTicketController@index']);
+        Route::get('/Show/index', ['SupportTicket\ShowSupportTicketController@index']);
+        Route::get('/Show', ['SupportTicket\ShowSupportTicketController@@show']);
     });
 
     Route::prefix('support-ticket-reply')->group(function () {
         Route::post('/Create', ['SupportTicketReply\AddSupportTicketReplyController@store']);
         Route::post('/Delete', ['SupportTicketReply\DeleteSupportTicketReplyController@destroy']);
         Route::post('/Edit', ['SupportTicketReply\EditSupportTicketReplyController@update']);
-        Route::get('/Show', ['SupportTicketReply\ShowSupportTicketReplyController@index']);
+        Route::get('/Show/index', ['SupportTicketReply\ShowSupportTicketReplyController@index']);
+        Route::get('/Show', ['SupportTicketReply\ShowSupportTicketReplyController@show']);
     });
 
     Route::prefix('transaction-history')->group(function () {
         Route::post('/Create', ['TransactionHistory\AddTransactionController@store']);
         Route::post('/Delete', ['TransactionHistory\DeleteTransactionController@destroy']);
         Route::post('/Edit', ['TransactionHistory\EditTransactionController@update']);
-        Route::get('/Show', ['TransactionHistory\ShowTransactionController@index']);
+        Route::get('/Show/index', ['TransactionHistory\ShowTransactionController@index']);
+        Route::get('/Show', ['TransactionHistory\ShowTransactionController@show']);
     });
 
     Route::prefix('wishlist')->group(function () {
