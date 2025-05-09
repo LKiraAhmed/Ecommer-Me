@@ -34,7 +34,7 @@ But the backend logic is stable and expandable, with many advanced features.
 - 🎟️ Discount coupon system
 - 🧾 Invoice creation & order summary
 - 📩 Contact & support ticket system
-- 🔔 Real-time notifications (Firebase)
+- 🔔 Real-time notifications 
 - 💬 Chat between admin and users
 - ☁️ Redis support using `REDIS_CLIENT=predis`
 - 📦 Multi-merchant support
