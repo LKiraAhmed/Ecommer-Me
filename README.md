@@ -36,10 +36,8 @@ But the backend logic is stable and expandable, with many advanced features.
 - 📩 Contact & support ticket system
 - 🔔 Real-time notifications 
 - 💬 Chat between admin and users
-- ☁️ Redis support using `REDIS_CLIENT=predis`
 - 📦 Multi-merchant support
 - 📊 Best-selling products section
-- 🌍 Cash-on-delivery payment system
 
 ---
 
